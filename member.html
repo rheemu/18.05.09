@@ -1,0 +1,80 @@
+<IDOCTYPE HTML>
+	<html>
+	<head>
+		<script type="text/javascript">
+			function checkNotEmpty(field) {
+				if (field.value.length == 0) {
+					alert("아이디, 이름, 비밀번호는 공백이면 안 됩니다!");
+					field.focus();
+					return false;
+				}
+				return true;
+			}
+		</script>
+	</head>
+
+	<body>
+		<h3>회원가입</h3>
+		<form action="input.jsp" method="post">
+		<table border="1">
+			<tr>
+				<th>항목</th>
+				<th>내용</th>
+			</tr>
+			<tr>
+				<td>아이디</td>
+				<td><input id="user" type="id" name="id" size="15" maxlength="12"></td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td><input id="user" type="name" name="name" size="15" maxlength="12"></td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input id="user" type="password" name="password" size="15" maxlength="10"></td>
+			</tr>
+			<tr>
+				<td>성별</td>
+				<td><input type="radio" name="gender" value="male">남성
+				<input type="radio" name="gender" value="female">여성
+				</td>
+			</tr>
+			<tr>
+				<td>휴대전화</td>
+				<td>
+				<select name="phone">
+					<option value="010">010</option>
+					<option value="02">02</option>
+				</select> -
+				<input type="tel" name="tel1" size="3" maxlength="4"> -
+				<input type="tel" name="tel2" size="3" maxlength="4">
+				</td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td><input type="address" name="address" size="50" maxlength="50"></td>
+			</tr>
+			<tr>
+				<td>취미</td>
+				<td>
+					<input type="checkbox" name="check" value="movie">영화감상
+					<input type="checkbox" name="check" value="reading">독서
+					<input type="checkbox" name="check" value="shopping">쇼핑
+					<input type="checkbox" name="check" value="exercise">운동
+				</td>
+			</tr>
+			<tr>
+				<td>자기소개</td>
+				<td>
+					<textarea name="introduction" rows="5" cols="50"></textarea>
+				</td>
+			</tr>
+		</table>
+		<input type="submit" value="확인" onclick="checkNotEmpty(document.getElementById('user'))">
+		<input type="reset" value="다시입력">
+		</form>
+	</body>
+	</html>
+
+	var exp = /[0-9]+/;
+	
